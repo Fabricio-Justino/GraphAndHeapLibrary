@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="GraphAlgorithm"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\src\;CMake Files\src\app\;CMake Files\lib\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GraphAlgorithm">
+				<Option output="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/GraphAlgorithm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/lib/graph"/>
+					<Add directory="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/lib/algorithm"/>
+					<Add directory="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/lib/heap"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/Makefile&quot;  VERBOSE=1 GraphAlgorithm"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="GraphAlgorithm/fast">
+				<Option output="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/GraphAlgorithm" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/lib/graph"/>
+					<Add directory="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/lib/algorithm"/>
+					<Add directory="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/lib/heap"/>
+					<Add directory="/usr/include/c++/11"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/11"/>
+					<Add directory="/usr/include/c++/11/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/11/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/Makefile&quot;  VERBOSE=1 GraphAlgorithm/fast"/>
+					<CompileFile command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j4 -f &quot;/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/src/app/main.cpp">
+			<Option target="GraphAlgorithm"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/src/app/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\app\"/>
+		</Unit>
+		<Unit filename="/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/lib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

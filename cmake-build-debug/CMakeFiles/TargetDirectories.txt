@@ -1,0 +1,8 @@
+/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/CMakeFiles/GraphAlgorithm.dir
+/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/src/app/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/lib/CMakeFiles/GraphLibrary.dir
+/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/lib/CMakeFiles/edit_cache.dir
+/mnt/c/Users/Fabricio/OneDrive/Projects-work/CPP/GraphAlgorithm/cmake-build-debug/lib/CMakeFiles/rebuild_cache.dir
