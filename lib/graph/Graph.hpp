@@ -79,8 +79,8 @@ template<class T>
 void Graph<T>::edgeTo(const T &from, const T &to, int weight) {
     Edge<T> ed1(from, to, weight);
 
-    if (graph.find(from) == graph.end() || graph.find(to) == graph.end())
-        this->edges.insert(ed1);
+    if (edges.find(ed1) == edges.end())
+        edges.insert(ed1);
 
     if (graph.find(from) == graph.end()) {
         graph[from] = std::unordered_set<Edge<T>>();

@@ -32,74 +32,17 @@ private:
 public:
     explicit GraphAlgorithm(Graph<T> *graph);
     void changeGraph(Graph<T> *graf);
+
     GraphAlgorithm<T> & depthFirstSearch(const T &seek);
     GraphAlgorithm<T> & breadthFirstSearch(const T &seek);
     GraphAlgorithm<T> & dijkstra(const T &init);
+    void prim(Graph<T> *graf, const T& source);
     bool hasPathTo(const T &seek);
     std::unique_ptr<std::stack<T>> pathTo(const T &to);
     double sourceDistTo(const T& seek);
-    void prim(Graph<T> *graf, const T& source);
 };
 
-template<class T>
-void GraphAlgorithm<T>::prim(Graph<T> *graf, const T& source) {
-    if (graph->isEmpty() || (*graph)[source].empty()) return;
-
-    clearDataStructure();
-
-    const double INFINITY = std::numeric_limits<double>::infinity();
-    for (const auto& vertex : graph->getVertices())
-        distTo[vertex] = INFINITY;
-
-    distTo[source] = 0;
-    minHeap.add(source, 0);
-    int countFormedBranch = 0;
-    while (!minHeap.isEmpty() && countFormedBranch < (graph->getVertices().size() - 1)) {
-       T currentData = minHeap.pool();
-       if (contains(marked, currentData)) continue;
-       marked.insert(currentData);
-       countFormedBranch++;
-
-       for (const auto& edge : (*graph)[currentData]) {
-           if (contains(marked, edge.getTo())) continue;
-
-           if (edge.getWeight() < distTo[edge.getTo()]) {
-               std::cout << "from: " << currentData << " to: " << edge.getTo() << " with: " << edge.getWeight() << "\n";
-               distTo[edge.getTo()] = edge.getWeight();
-               edgeTo[edge.getTo()] = edge;
-               minHeap.add(edge.getTo(), edge.getWeight());
-           }
-       }
-    }
-
-    for (const auto &[to, edge] : edgeTo)
-        graf->addEdge(edge.getFrom(), to, edge.getWeight());
-}
-
-template<class T>
-double GraphAlgorithm<T>::sourceDistTo(const T &seek) {
-    return this->distTo[seek];
-}
-
-template<class T>
-bool GraphAlgorithm<T>::contains(const std::unordered_set<T> &set,const T &key) {
-    return set.find(key) != set.end();
-}
-
-template<class T>
-bool GraphAlgorithm<T>::contains(const std::unordered_map<T, Edge<T>> &map,const T &key) {
-    return map.find(key) != map.end();
-}
-
-template<class T>
-void GraphAlgorithm<T>::clearDataStructure() {
-    this->marked.clear();
-    this->edgeTo.clear();
-    this->distTo.clear();
-    this->minHeap.clear();
-}
-
-template<class T>
+template <class T>
 GraphAlgorithm<T>::GraphAlgorithm(Graph<T> *graph) {
     this->graph = graph;
     this->minHeap = PairHeap<T, double>::minPairHeap(minHeap);
@@ -186,16 +129,73 @@ GraphAlgorithm<T> &GraphAlgorithm<T>::dijkstra(const T &init) {
             }
         }
     }
-    
+
     return *this;
 }
 
-template <class T>
+template<class T>
+void GraphAlgorithm<T>::prim(Graph<T> *graf, const T& source) {
+    if (graph->isEmpty() || (*graph)[source].empty()) return;
+
+    clearDataStructure();
+
+    const double INFINITY = std::numeric_limits<double>::infinity();
+    for (const auto& vertex : graph->getVertices())
+        distTo[vertex] = INFINITY;
+
+    distTo[source] = 0;
+    minHeap.add(source, 0);
+    int countFormedBranch = 0;
+    while (!minHeap.isEmpty() && countFormedBranch < (graph->getVertices().size() - 1)) {
+        T currentData = minHeap.pool();
+        if (contains(marked, currentData)) continue;
+        marked.insert(currentData);
+
+        for (const auto& edge : (*graph)[currentData]) {
+            if (contains(marked, edge.getTo())) continue;
+
+            if (edge.getWeight() < distTo[edge.getTo()]) {
+                distTo[edge.getTo()] = edge.getWeight();
+                edgeTo[edge.getTo()] = edge;
+                minHeap.add(edge.getTo(), edge.getWeight());
+                countFormedBranch++;
+            }
+        }
+    }
+
+    for (const auto &[to, edge] : edgeTo)
+        graf->addEdge(edge.getFrom(), to, edge.getWeight());
+}
+
+template<class T>
+double GraphAlgorithm<T>::sourceDistTo(const T &seek) {
+    return this->distTo[seek];
+}
+
+template<class T>
+bool GraphAlgorithm<T>::contains(const std::unordered_set<T> &set,const T &key) {
+    return set.find(key) != set.end();
+}
+
+template<class T>
+bool GraphAlgorithm<T>::contains(const std::unordered_map<T, Edge<T>> &map,const T &key) {
+    return map.find(key) != map.end();
+}
+
+template<class T>
+void GraphAlgorithm<T>::clearDataStructure() {
+    this->marked.clear();
+    this->edgeTo.clear();
+    this->distTo.clear();
+    this->minHeap.clear();
+}
+
+template<class T>
 void GraphAlgorithm<T>::relax(const Edge<T> &edge) {
-   if (distTo[edge.getFrom()] + edge.getWeight() < distTo[edge.getTo()]) {
-       distTo[edge.getTo()] = distTo[edge.getFrom()] + edge.getWeight();
-       edgeTo[edge.getTo()] = edge;
-   }
+    if (distTo[edge.getFrom()] + edge.getWeight() < distTo[edge.getTo()]) {
+        distTo[edge.getTo()] = distTo[edge.getFrom()] + edge.getWeight();
+        edgeTo[edge.getTo()] = edge;
+    }
 }
 
 template <typename T>
@@ -209,7 +209,7 @@ std::unique_ptr<std::stack<T>> GraphAlgorithm<T>::pathTo(const T &to) {
     if (!hasPathTo(to)) {
         return paths;
     }
-    
+
     T seek = to;
     while (edgeTo.find(seek) != edgeTo.end()) {
         paths->push(seek);
