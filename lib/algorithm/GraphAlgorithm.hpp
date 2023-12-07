@@ -61,6 +61,8 @@ void GraphAlgorithm<T>::prim(Graph<T> *graf, const T& source) {
        countFormedBranch++;
 
        for (const auto& edge : (*graph)[currentData]) {
+           if (contains(marked, edge.getTo())) continue;
+
            if (edge.getWeight() < distTo[edge.getTo()]) {
                std::cout << "from: " << currentData << " to: " << edge.getTo() << " with: " << edge.getWeight() << "\n";
                distTo[edge.getTo()] = edge.getWeight();

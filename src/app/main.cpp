@@ -26,6 +26,7 @@ int main() {
     graph.addEdge("Ni", "Na", 15);
     graph.addEdge("Ni", "Cl", 13);
     graph.addEdge("Ag", "Pl", 20);
+    graph.addEdge("Na", "Pl", 4);
 
 
    cout << graph.toDot() << endl;
