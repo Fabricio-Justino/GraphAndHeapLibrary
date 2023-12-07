@@ -14,6 +14,11 @@
 
 #include "Edge.hpp"
 
+/**
+ * A class that's represents a graph and its connections (edges)
+ *
+ * @tparam T data type holder by vertex
+ */
 template<class T>
 class Graph {
 protected:
@@ -24,22 +29,63 @@ protected:
     virtual void edgeTo(const T &from, const T &to, int weight);
 
 public:
-    // constructors
+    // constructors and delete
     Graph();
     ~Graph();
 
     // insertions
+    /**
+     *@brief Add a new vertex to the graph if there isn't one with same hash and '==' (operator).
+     *
+     * @param from The vertex to be added in the graph
+     */
     void addVertex(const T &from);
 
+    /**
+     * @brief Adds an edge from one vertex to another with a specified weight.
+     *
+     * @param from The origin vertex.
+     * @param to The destination vertex linked from the origin (from)
+     * @param weight The weight of the edge.
+     */
     virtual void addEdge(const T &from, const T &to, int weight);
 
      // removal methods
+     /**
+      * @brief Remove a vertex and all edges associated with it.
+      *
+      * @param data The vertex to ne removed from graph.
+      * @return True if the vertex is successfully removed, false otherwise.
+      */
      virtual bool removeVertex(const T &data);
 
     // accessors
+    /**
+     * @brief Find all vertices adjacent to the given value
+     *
+     * @param data The vertex to be find
+     * @return Read-only set with all adjacent of data
+     */
     const std::unordered_set<Edge<T>> &getAdjacent(const T &data);
+
+    /**
+     * @brief Find all vertices adjacent to the given value
+     *
+     * @param findValue The vertex to be find
+     * @return Read-only set with all adjacent of data
+     */
     const std::unordered_set<Edge<T>> &operator[](const T &findValue);
+
+    /**
+     *
+     * @return read-only set of all vertices in the graph
+     */
     const std::unordered_set<T> &getVertices() const;
+
+    /**
+     *
+     * @return an String to be plotted on  <a ref="https://dreampuf.github.io/GraphvizOnline/">graphviz</a>
+     */
     std::string toDot();
     const std::unordered_set<Edge<T>> &getEdges() const;
     bool isEmpty() const;
