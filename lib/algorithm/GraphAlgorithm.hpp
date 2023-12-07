@@ -50,6 +50,28 @@ void GraphAlgorithm<T>::prim(Graph<T> *graf, const T& source) {
     const double INFINITY = std::numeric_limits<double>::infinity();
     for (const auto& vertex : graph->getVertices())
         distTo[vertex] = INFINITY;
+
+    distTo[source] = 0;
+    minHeap.add(source, 0);
+    int countFormedBranch = 0;
+    while (!minHeap.isEmpty() && countFormedBranch < (graph->getVertices().size() - 1)) {
+       T currentData = minHeap.pool();
+       if (contains(marked, currentData)) continue;
+       marked.insert(currentData);
+       countFormedBranch++;
+
+       for (const auto& edge : (*graph)[currentData]) {
+           if (edge.getWeight() < distTo[edge.getTo()]) {
+               std::cout << "from: " << currentData << " to: " << edge.getTo() << " with: " << edge.getWeight() << "\n";
+               distTo[edge.getTo()] = edge.getWeight();
+               edgeTo[edge.getTo()] = edge;
+               minHeap.add(edge.getTo(), edge.getWeight());
+           }
+       }
+    }
+
+    for (const auto &[to, edge] : edgeTo)
+        graf->addEdge(edge.getFrom(), to, edge.getWeight());
 }
 
 template<class T>
