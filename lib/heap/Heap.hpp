@@ -19,12 +19,58 @@ protected:
     void exchange(int v1, int v2);
 
 public:
+    /**
+      * @brief Adds an element to the priority queue of the heap.
+      *
+      * This method inserts an element in the order of its priority in the heap.
+      *
+      * @param value The data to be added to the heap.
+      */
     void add(const T &value);
+
+    /**
+      * @brief Checks if the heap is empty.
+      *
+      * @return True if there is at least one element in the heap, false otherwise.
+      */
     bool isEmpty();
+
+    /**
+      * @brief Gets the number of elements stored in the heap.
+      *
+      * This method returns the current count of elements in the heap.
+      *
+      * @return The number of elements stored in the heap.
+      */
     size_t getSize();
-    T pool();
-    T peek();
+
+    /**
+     * @brief Retrieves and removes the element with the highest priority.
+     *
+     * This method returns a reference to the element with the highest priority in the heap.
+     * The element is also removed from the heap.
+     *
+     * @return A read/write reference to the element with the highest priority.
+     */
+    T& pool();
+
+    /**
+     * @brief Retrieves, without removing, the element with the highest priority.
+     *
+     * This method returns a read-only reference to the element with the highest priority in the heap.
+     * The element remains in the heap.
+     *
+     * @return Read-only reference to the element with the highest priority.
+     */
+    const T& peek() const;
+
+    /**
+     * @brief Erases all elements in the heap.
+     *
+     * This method removes all elements from the heap, resulting in an empty heap.
+     */
     void clear();
+
 
     friend std::ostream &operator<<(std::ostream &os, const Heap &heaps) {
         os << "{";
@@ -49,7 +95,7 @@ void Heap<T>::clear() {
 }
 
 template<class T>
-T Heap<T>::peek() {
+const T& Heap<T>::peek() const {
     if (this->size == 0) throw std::exception();
     return heap[0];
 }
@@ -62,12 +108,12 @@ void Heap<T>::exchange(int v1, int v2) {
 }
 
 template<class T>
-T Heap<T>::pool() {
+T& Heap<T>::pool() {
     if (this->size <= 0) throw std::exception();
 
     this->exchange(0, size - 1);
 
-    T result = *(this->heap.end() - 1);
+    T &result = *(this->heap.end() - 1);
 
     heap.erase((this->heap.end() - 1));
     size--;

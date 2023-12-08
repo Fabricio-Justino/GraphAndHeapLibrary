@@ -42,7 +42,7 @@ int main() {
     }
     cout << endl;
     auto *g = new Graph<string>();
-    graphAlgorithm.kruskal(g, "H");
+    graphAlgorithm.prim(g, "H");
 
     cout << endl << g->toDot() << endl;
     return 0;
