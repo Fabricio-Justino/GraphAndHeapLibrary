@@ -1,4 +1,5 @@
-build
+# built-in cmake
+build/
 cmake-build-degub/
 cmake-build-release/
 .idea/

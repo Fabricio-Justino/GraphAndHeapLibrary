@@ -72,13 +72,13 @@ public:
      * @brief Find all vertices adjacent to the given value
      *
      * @param findValue The vertex to be find
-     * @return Read-only set with all adjacent of data
+     * @return A read-only set with all adjacent of data
      */
     const std::unordered_set<Edge<T>> &operator[](const T &findValue);
 
     /**
      *
-     * @return read-only set of all vertices in the graph
+     * @return A read-only set containing all vertices in the graph
      */
     const std::unordered_set<T> &getVertices() const;
 
@@ -87,7 +87,19 @@ public:
      * @return an String to be plotted on  <a ref="https://dreampuf.github.io/GraphvizOnline/">graphviz</a>
      */
     std::string toDot();
+
+
+    /**
+    * @brief Get a read-only set containing edges in the graph.
+    *  In an undirected graph, both (u, v) and (v, u) edges are included.
+    * 
+    * @return A read-only set containing edges in the graph.
+    */
     const std::unordered_set<Edge<T>> &getEdges() const;
+
+    /**
+     * @return True if the graph contains at last one vertex, false otherwise 
+     */
     bool isEmpty() const;
 
     // print
