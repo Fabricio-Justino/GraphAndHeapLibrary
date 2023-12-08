@@ -14,8 +14,37 @@ protected:
     std::vector<T> heap;
     size_t size;
     Heap() : size(0){}
+
+    /**
+     * @brief Swaps the current element with its child at the left or right, only if the child has higher priority.
+     *
+     * This method is responsible for moving the current element down the heap (sinking) if the child has a higher priority.
+     *
+     * @param childIndex The index of the next element to be swapped if its parent.
+     *
+     * @note The time complexity of this operation is O(log n), where n is the number of elements in the heap.
+     */
     virtual void sink(int childIndex) = 0;
-    virtual void swim(int childIndex) = 0;
+
+    /**
+    * @brief Swaps the current element with its parent, only if the parent has higher priority.
+    *
+    * This method is responsible for moving the current element up the heap (swimming) if the parent has a higher priority.
+    *
+    * @param parentIndex The index of the parent element to be swapped with the current element.
+    *
+    * @note The time complexity of this operation is O(log n), where n is the number of elements in the heap.
+    */
+    virtual void swim(int parentIndex) = 0;
+
+
+
+    /**
+     * @brief Swap the value of v1 and v2
+     *
+     * @param v1 The index for the first value in heap vector
+     * @param v2 The index for the second value in heap vector
+     */
     void exchange(int v1, int v2);
 
 public:
@@ -24,6 +53,7 @@ public:
       *
       * This method inserts an element in the order of its priority in the heap.
       *
+      * @note The time complexity of this operation is O(log n), where n is the number of elements in the heap.
       * @param value The data to be added to the heap.
       */
     void add(const T &value);
@@ -50,6 +80,7 @@ public:
      * This method returns a reference to the element with the highest priority in the heap.
      * The element is also removed from the heap.
      *
+     * @note The time complexity of this operation is O(log n), where n is the number of elements in the heap.
      * @return A read/write reference to the element with the highest priority.
      */
     T& pool();
